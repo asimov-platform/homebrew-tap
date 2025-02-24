@@ -1,0 +1,34 @@
+name: Homebrew Formula Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, macos-14, ubuntu-latest]
+        arch: [x86_64, arm64]
+        exclude:
+          - os: ubuntu-latest
+            arch: arm64 # Ubuntu ARM64 is rare for GitHub Actions
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Set up Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+      - name: Install Protoflow
+        run: |
+          brew tap asimov-platform/tap
+          brew install protoflow
+
+      - name: Verify Installation
+        run: protoflow --version
