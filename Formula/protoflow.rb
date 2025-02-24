@@ -1,5 +1,5 @@
 class Protoflow < Formula
-  desc "Protoflow implements flow-based programming (FBP) for Rust using Protocol Buffers messages."
+  desc "Flow-based programming (FBP) for Rust using Protocol Buffers"
   homepage "https://github.com/imunproductive/protoflow"
   license "Unlicense"
   version "4.1.4"
