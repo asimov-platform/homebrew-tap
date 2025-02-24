@@ -1,4 +1,4 @@
-name: Homebrew Formula Test
+name: Test Homebrew Formula
 
 on:
   push:
@@ -7,28 +7,50 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual execution
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [macos-latest, macos-14, ubuntu-latest]
-        arch: [x86_64, arm64]
-        exclude:
-          - os: ubuntu-latest
-            arch: arm64 # Ubuntu ARM64 is rare for GitHub Actions
-    runs-on: ${{ matrix.os }}
+  test-macos:
+    runs-on: macos-latest
     steps:
-      - name: Set up Homebrew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install Protoflow
-        run: |
-          brew tap asimov-platform/tap
-          brew install protoflow
+      - name: Set up Homebrew
+        run: brew update
+
+      - name: Tap asimov-platform
+        run: brew tap asimov-platform/tap https://github.com/asimov-platform/homebrew-tap.git
+
+      - name: Install asimov-cli
+        run: brew install asimov-platform/tap/asimov-cli
 
       - name: Verify Installation
-        run: protoflow --version
+        run: |
+          which asimov-cli
+          asimov-cli --version
+
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install build-essential curl -y
+
+      - name: Install Homebrew (Linux)
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+      - name: Tap asimov-platform
+        run: brew tap asimov-platform/tap https://github.com/asimov-platform/homebrew-tap.git
+
+      - name: Install asimov-cli
+        run: brew install asimov-platform/tap/asimov-cli
+
+      - name: Verify Installation
+        run: |
+          which asimov-cli
+          asimov-cli --version
