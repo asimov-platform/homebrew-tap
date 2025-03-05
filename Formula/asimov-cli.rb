@@ -1,5 +1,5 @@
 class AsimovCli < Formula
-  desc "Asimov CLI Tool"
+  desc "ASIMOV Command-Line Interface (CLI)"
   homepage "https://github.com/asimov-platform/asimov-cli"
   version "25.0.0-dev.2"
 
@@ -39,5 +39,3 @@ class AsimovCli < Formula
     system "#{bin}/asimov", "--version"
   end
 end
-
-
