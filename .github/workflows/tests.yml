@@ -39,3 +39,4 @@ jobs:
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
+          if-no-files-found: ignore

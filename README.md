@@ -17,10 +17,10 @@ brew tap asimov-platform/tap
 
 ## Installation
 
-### Install [Protoflow]
+### Install [asimov-cli]
 
 ```bash
-brew install protoflow --HEAD
+brew install asimov-cli
 ```
 
 ## Troubleshooting
@@ -28,4 +28,4 @@ brew install protoflow --HEAD
 See [Homebrew's documentation](https://docs.brew.sh) in case of any trouble.
 
 [ASIMOV Platform]: https://github.com/asimov-platform
-[Protoflow]:       https://github.com/asimov-platform/protoflow
+[asimov-cli]: https://github.com/asimov-platform/asimov-cli
