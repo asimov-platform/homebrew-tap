@@ -1,29 +1,29 @@
 class AsimovCli < Formula
   desc "ASIMOV Command-Line Interface (CLI)"
   homepage "https://github.com/asimov-platform/asimov-cli"
-  version "25.0.0-dev.2"
+  version "25.0.0-dev.3"
 
   on_macos do
     if Hardware::CPU.arm?
       # macOS ARM
       url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-macos-arm.gz"
-      sha256 "af05128473c3dfda48e7740d2a456a7996a6391ac46a3ef0620cb803afaeb793"
+      sha256 "c89a0660b1d091c332f6cf1611fe6f9021c8ed48948f2c43e2b05dfeb7afc8de"
     else
       # macOS Intel
       url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-macos-x86.gz"
-      sha256 "332f2a586bb3d702db60b165f09b96a01995034a35ab109713d01ba53f0cb2cf"
+      sha256 "f2620190d96c1d929ce1c43d6e7f6ba751b32b3000d6419c5f032e4e23a2dc3e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       # Linux ARM
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-arm.gz"
-      sha256 "e9ca2393fe6147a01f10a36bd162b8f014fcfc1e964bb65a33e6d0920b34960d"
+      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-arm-gnu.gz"
+      sha256 "2761b82936598588b7266d6d63abd1271e57d087c14f382f1ab15e523973c3e5"
     else
       # Linux Intel
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-x86.gz"
-      sha256 "a64251f846d0cc0280a7f83f25f0db0c4f15ef4caf349ccd45dad22250866060"
+      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-x86-gnu.gz"
+      sha256 "0c30685a1b814364c17a70b629e3b94a24bec0c66c1943bd324cf56b57980326"
     end
   end
 
