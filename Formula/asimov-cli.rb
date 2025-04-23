@@ -14,10 +14,10 @@ class AsimovCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/asimov-platform/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1df00884e2ab6c96c618d0b9264576765611d491b6cf156fa0a6ec5f1dbb197"
-    sha256 cellar: :any_skip_relocation, ventura:       "5768a9d67d1cbfd5db612cb6c63eb532a28557caff46935faca2e1aab267b09d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "533274ad024238587260082565fe92e952cb1db5bbc1287c0b011dda8719a8d0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a454e8779c2458dafd092dfd2551c3b742a89cb841d0f3413a90622ade2a13c2"
+    sha256 cellar: :any_skip_relocation, ventura:       "e92d07e9fb5d7e382b7bf633d4f9e3cf68f0075c7ebc3501374ee2a6d22660c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a475d8eefdbdf7ca68808585883d7a21b0bc72e7046be244d6a16fc4ad17adb"
   end
 
   depends_on "rust" => :build
