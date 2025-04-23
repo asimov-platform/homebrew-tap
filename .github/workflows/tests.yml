@@ -3,15 +3,14 @@ name: brew test-bot
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
   test-bot:
     strategy:
-      fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-13, macos-14]
+        os: [ubuntu-22.04, macos-13, macos-15]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
@@ -31,7 +30,7 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae
+      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/asimov-platform/tap-new'
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
@@ -40,4 +39,3 @@ jobs:
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
-          if-no-files-found: ignore
