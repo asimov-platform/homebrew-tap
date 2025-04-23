@@ -85,9 +85,10 @@ class AsimovCli < Formula
   test do
     system bin/"asimov", "--version"
 
-    # Test that all resources exist
+    # Test that all resources exist and run
     resources.each do |r|
       assert_path_exists bin/r.name
+      system bin/r.name, "--version"
     end
   end
 end
