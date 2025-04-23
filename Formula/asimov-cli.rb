@@ -25,30 +25,30 @@ class AsimovCli < Formula
   on_macos do
     on_arm do
       resource "asimov-dataset" do
-        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-macos-arm.gz"
-        sha256 "cf4f4b1058db1f5238df985b3958e596c6eea84c3f92f0d8f0f5a489174eefbf"
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.6/asimov-dataset-cli-macos-arm.gz"
+        sha256 "d2f99004bf815f339f2e27f3f6b4f85f682ce48a4ca0cdb8a5614a07a0afd549"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-macos-arm.gz"
-        sha256 "39d3c86b017c0b51a263f946f44d398161f44920e3b224e8c718cca3f7cbd57d"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-macos-arm.gz"
+        sha256 "33d613fb703ca893cecb4b47dd4b8ff627dafd5b7968ff81545a1af57db7aa96"
       end
       # resource "asimov-repository" do
-      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-macos-arm.gz"
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-arm.gz"
       #   sha256 "64941269d9bcd8a19c2b00877da71e252ddf9f05a7ccdcfc3fa79eb02b9b4ce0"
       # end
     end
 
     on_intel do
       resource "asimov-dataset" do
-        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-macos-x86.gz"
-        sha256 "ea11d213dc01c99171e456de94958acc37abe84992b1c234b48e75a85ad6497d"
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.6/asimov-dataset-cli-macos-x86.gz"
+        sha256 "89c952284188d493d62b0acec6c67313b1a3d05cca16042e4510173cafeebfb0"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-macos-x86.gz"
-        sha256 "18b26b321279923109b5dc81d7c8cb3cb5db7179a5db6e27601849add9195c37"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-macos-x86.gz"
+        sha256 "d87085a6c955e0de0190988e365905148013d0257cb745908a70adb1ee619b3a"
       end
       # resource "asimov-repository" do
-      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-macos-x86.gz"
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-x86.gz"
       #   sha256 "501c312b5bfce96bba454591e3fcae3735d2dcc743bfdfbd11896fc517c97f21"
       # end
     end
@@ -57,15 +57,15 @@ class AsimovCli < Formula
   on_linux do
     on_intel do
       resource "asimov-dataset" do
-        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-linux-x86-gnu.gz"
-        sha256 "abbcf6612278381d079e85b658cced97b47f71652437fa39e6eb8dc2423d6d6d"
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.6/asimov-dataset-cli-linux-x86-gnu.gz"
+        sha256 "f154eac9ae686cfea8d5e72b5ca96c45f77ac50e7585ca09c53e4306954044e5"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-linux-x86-gnu.gz"
-        sha256 "d8cb3ad98499d42ec4f89c6669264935a41b0583f6e3995b7e1382b73b654af6"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-linux-x86-gnu.gz"
+        sha256 "dc0c2951287df99aa20d50e2525395c62de1c2cbc716c075b9fff5003cbaa4d3"
       end
       # resource "asimov-repository" do
-      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-linux-x86-gnu.gz"
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-linux-x86-gnu.gz"
       #   sha256 "cf0e9a64019060dced69553f2805772377299000092bd97ed32b7b6c6d924a8d"
       # end
     end
