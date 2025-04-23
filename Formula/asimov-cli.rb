@@ -1,8 +1,8 @@
 class AsimovCli < Formula
   desc "ASIMOV Command-Line Interface (CLI)"
   homepage "https://github.com/asimov-platform/asimov-cli"
-  version "25.0.0-dev.4"
   url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.0.0-dev.4.tar.gz"
+  version "25.0.0-dev.4"
   sha256 "0da9115b08a291d0622e227813e1008a06164c24e256567d9cfb64729e98c78f"
   license "Unlicense"
   head "https://github.com/asimov-platform/asimov-cli.git", branch: "master"
