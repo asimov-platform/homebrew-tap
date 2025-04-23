@@ -1,41 +1,92 @@
 class AsimovCli < Formula
   desc "ASIMOV Command-Line Interface (CLI)"
   homepage "https://github.com/asimov-platform/asimov-cli"
-  version "25.0.0-dev.4"
+  url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.0.0-dev.4.tar.gz"
+  sha256 "87ad24988c4b3cb1913d9dcbb41c809975fcf15249fd1379a30b4c6fce9dfb05"
+  license "Unlicense"
+  head "https://github.com/asimov-platform/asimov-cli.git", branch: "master"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
+  bottle do
+    root_url "https://ghcr.io/v2/asimov-platform/new"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c385e2f0856fbf8b00cd37691570825e6cb2e7bdea4b1308b70715b54a897e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "83d3935674331e627f34b95cdffec8f7bea2dd5a8b429e090cc31cef76b4fb70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e26a5c99741e68584c7df398b5e21d06cc718c39d97eec0b28f2a79672c12139"
+  end
+
+  depends_on "rust" => :build
 
   on_macos do
-    if Hardware::CPU.arm?
-      # macOS ARM
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-macos-arm.gz"
-      sha256 "e67ec61334647909fa1d405498ca42a6e7a9a96471a435ec5bbb7dc784c08ce4"
-    else
-      # macOS Intel
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-macos-x86.gz"
-      sha256 "eaaa532d63de98905367816b5ec6fad87815d2911d6d57bf7ddeec446f36bec5"
+    on_arm do
+      resource "asimov-dataset" do
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-macos-arm.gz"
+        sha256 "cf4f4b1058db1f5238df985b3958e596c6eea84c3f92f0d8f0f5a489174eefbf"
+      end
+      resource "asimov-module" do
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-macos-arm.gz"
+        sha256 "39d3c86b017c0b51a263f946f44d398161f44920e3b224e8c718cca3f7cbd57d"
+      end
+      # resource "asimov-repository" do
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-macos-arm.gz"
+      #   sha256 "64941269d9bcd8a19c2b00877da71e252ddf9f05a7ccdcfc3fa79eb02b9b4ce0"
+      # end
+    end
+
+    on_intel do
+      resource "asimov-dataset" do
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-macos-x86.gz"
+        sha256 "ea11d213dc01c99171e456de94958acc37abe84992b1c234b48e75a85ad6497d"
+      end
+      resource "asimov-module" do
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-macos-x86.gz"
+        sha256 "18b26b321279923109b5dc81d7c8cb3cb5db7179a5db6e27601849add9195c37"
+      end
+      # resource "asimov-repository" do
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-macos-x86.gz"
+      #   sha256 "501c312b5bfce96bba454591e3fcae3735d2dcc743bfdfbd11896fc517c97f21"
+      # end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm?
-      # Linux ARM
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-arm-gnu.gz"
-      sha256 "ef21144725eeccd0618357f0bb4936d1653a8968bfa8b530fa2490685470dc33"
-    else
-      # Linux Intel
-      url "https://github.com/asimov-platform/asimov-cli/releases/download/#{version}/asimov-linux-x86-gnu.gz"
-      sha256 "6b6e54fd490e036d864158de7d4b19a248aaf64c926ff9d3daa9db0f463d6f9c"
+    on_intel do
+      resource "asimov-dataset" do
+        url "https://github.com/asimov-platform/asimov-dataset-cli/releases/download/25.0.0-dev.5/asimov-linux-x86-gnu.gz"
+        sha256 "abbcf6612278381d079e85b658cced97b47f71652437fa39e6eb8dc2423d6d6d"
+      end
+      resource "asimov-module" do
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.2/module-cli-linux-x86-gnu.gz"
+        sha256 "d8cb3ad98499d42ec4f89c6669264935a41b0583f6e3995b7e1382b73b654af6"
+      end
+      # resource "asimov-repository" do
+      #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-linux-x86-gnu.gz"
+      #   sha256 "cf0e9a64019060dced69553f2805772377299000092bd97ed32b7b6c6d924a8d"
+      # end
     end
   end
 
   def install
-    system "gunzip", cached_download
+    system "cargo", "install", *std_cargo_args
 
-    uncompressed = Pathname(cached_download.to_s.sub(/\.gz$/, ""))
-
-    bin.install uncompressed => "asimov"
+    # Process each resource
+    resources.each do |r|
+      r.stage do
+        bin.install r.name
+      end
+    end
   end
 
   test do
-    system "#{bin}/asimov", "--version"
+    system bin/"asimov", "--version"
+
+    # Test that all resources exist
+    resources.each do |r|
+      assert_path_exists bin/r.name
+    end
   end
 end
