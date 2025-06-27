@@ -29,8 +29,8 @@ class AsimovCli < Formula
         sha256 "d2f99004bf815f339f2e27f3f6b4f85f682ce48a4ca0cdb8a5614a07a0afd549"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-macos-arm.gz"
-        sha256 "33d613fb703ca893cecb4b47dd4b8ff627dafd5b7968ff81545a1af57db7aa96"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-macos-arm.gz"
+        sha256 "6339345d9b921278fc1c50acdd6e19041b0b466c620ec7ed8358c7ade3c79ab4"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-arm.gz"
@@ -44,8 +44,8 @@ class AsimovCli < Formula
         sha256 "89c952284188d493d62b0acec6c67313b1a3d05cca16042e4510173cafeebfb0"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-macos-x86.gz"
-        sha256 "d87085a6c955e0de0190988e365905148013d0257cb745908a70adb1ee619b3a"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-macos-x86.gz"
+        sha256 "e7ea58e088ad196ff21f8f59e5e888f57bc4d0a285a8dfcc6f50eb72eb2020dd"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-x86.gz"
@@ -61,8 +61,8 @@ class AsimovCli < Formula
         sha256 "f154eac9ae686cfea8d5e72b5ca96c45f77ac50e7585ca09c53e4306954044e5"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.3/asimov-module-cli-linux-x86-gnu.gz"
-        sha256 "dc0c2951287df99aa20d50e2525395c62de1c2cbc716c075b9fff5003cbaa4d3"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-linux-x86-gnu.gz"
+        sha256 "ddc1230e42518086488121fdff3a356bbd1f9852b9a7d3cd3e0698697188a2f5"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-linux-x86-gnu.gz"
