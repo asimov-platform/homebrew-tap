@@ -1,9 +1,9 @@
 class AsimovCli < Formula
   desc "ASIMOV Command-Line Interface (CLI)"
   homepage "https://github.com/asimov-platform/asimov-cli"
-  url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.0.0-dev.6.tar.gz"
-  version "25.0.0-dev.6"
-  sha256 "4d8c5e79cd5ea3fb85f892b66e5bed926d708e722a1ec168f56b7b1c9c94a00a"
+  url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.0.0-dev.7.tar.gz"
+  version "25.0.0-dev.7"
+  sha256 "b302fb69ab96339257ce05b88deafd29bbb20a1457d1d6bae89c6a1e522a241d"
   license "Unlicense"
   head "https://github.com/asimov-platform/asimov-cli.git", branch: "master"
 
@@ -29,8 +29,8 @@ class AsimovCli < Formula
         sha256 "d2f99004bf815f339f2e27f3f6b4f85f682ce48a4ca0cdb8a5614a07a0afd549"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-macos-arm.gz"
-        sha256 "6339345d9b921278fc1c50acdd6e19041b0b466c620ec7ed8358c7ade3c79ab4"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.5/asimov-module-cli-macos-arm.gz"
+        sha256 "1abb2fb25275c9bbe10e601305ccb156378816683899cee8199bc6473c215a37"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-arm.gz"
@@ -44,8 +44,8 @@ class AsimovCli < Formula
         sha256 "89c952284188d493d62b0acec6c67313b1a3d05cca16042e4510173cafeebfb0"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-macos-x86.gz"
-        sha256 "e7ea58e088ad196ff21f8f59e5e888f57bc4d0a285a8dfcc6f50eb72eb2020dd"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.5/asimov-module-cli-macos-x86.gz"
+        sha256 "69f399551c99860927f6a3f88b45a21aa9248d24a0ef6944fdcda2deec324d7c"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-macos-x86.gz"
@@ -61,8 +61,8 @@ class AsimovCli < Formula
         sha256 "f154eac9ae686cfea8d5e72b5ca96c45f77ac50e7585ca09c53e4306954044e5"
       end
       resource "asimov-module" do
-        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.4/asimov-module-cli-linux-x86-gnu.gz"
-        sha256 "ddc1230e42518086488121fdff3a356bbd1f9852b9a7d3cd3e0698697188a2f5"
+        url "https://github.com/asimov-platform/asimov-module-cli/releases/download/25.0.0-dev.5/asimov-module-cli-linux-x86-gnu.gz"
+        sha256 "70c45fb854967a47342ab52a18dd4158ec2debe156d60691151a24914cf05ba6"
       end
       # resource "asimov-repository" do
       #   url "https://github.com/asimov-platform/asimov-repository-cli/releases/download/25.0.0-dev.1/asimov-repository-cli-linux-x86-gnu.gz"
