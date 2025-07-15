@@ -20,7 +20,6 @@ class AsimovCli < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   on_macos do
     on_arm do
