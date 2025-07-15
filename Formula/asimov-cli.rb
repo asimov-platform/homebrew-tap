@@ -11,6 +11,14 @@ class AsimovCli < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/asimov-platform/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa03bec5504f60214f3316e76a502cd4b6377ece1cf3afa69f974c8c4e788dbf"
+    sha256 cellar: :any_skip_relocation, ventura:       "69d0346cf5d438588938f65283b838dd20faf0aff7bf29fd41c18d39c004c981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de82aca6e85f6c23f976ed3fba07a903124af0f65402025dd7f5afe7cdbe0baa"
+  end
+
   depends_on "rust" => :build
 
   def install
