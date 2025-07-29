@@ -1,8 +1,8 @@
 class AsimovModuleCli < Formula
   desc "To Be Filled"
   homepage "https://github.com/asimov-platform/asimov-module-cli"
-  url "https://github.com/asimov-platform/asimov-module-cli/archive/refs/tags/25.0.0-dev.6.tar.gz"
-  sha256 "d53c8b36ad2c32041ea136cd98db4ed48f15205a8f79cee26434c895301629ad"
+  url "https://github.com/asimov-platform/asimov-module-cli/archive/refs/tags/25.0.0-dev.7.tar.gz"
+  sha256 "b45e88d7a750f98e83f4aa9d169b4458978ef59ce391b6be7919253a9f7a8721"
   license "Unlicense"
   head "https://github.com/asimov-platform/asimov-module-cli.git", branch: "master"
 
@@ -13,10 +13,9 @@ class AsimovModuleCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/asimov-platform/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "657aa84197cd02f87efc30e05a9b30bb94252f6f9142471bfab96a27c5bba4af"
-    sha256 cellar: :any_skip_relocation, ventura:       "5cfa9cd1ad39a8b4639797c91e6f127177e0d13c23f618a0827472eecab38e79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bba48c7f57756e63ef2a8db81e53c4937ad6bd4723448dbeda1fe24f8cff729"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05f42fde724ef9f3a0f0e3514781555d153c334beb3df1095d172061daf0d903"
+    sha256 cellar: :any_skip_relocation, ventura:       "a24eed656d711e516a79a50c8b1c1cab77d07407b9f4889fd4cdb85b6c6aeeb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c895e0208b53365cd5389cddc58fb998e955f668426845716845657da68c95d"
   end
 
   depends_on "rust" => :build
