@@ -19,8 +19,6 @@ class AsimovCli < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "asimov-module-cli"
-  depends_on "asimov-snapshot-cli"
 
   def install
     system "cargo", "install", *std_cargo_args
