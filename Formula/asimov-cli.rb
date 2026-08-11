@@ -19,6 +19,7 @@ class AsimovCli < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "openssl@3" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
