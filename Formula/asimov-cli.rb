@@ -1,8 +1,8 @@
 class AsimovCli < Formula
   desc "To Be Filled"
   homepage "https://github.com/asimov-platform/asimov-cli"
-  url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.7.5.tar.gz"
-  sha256 "a8237db6ff26d1ddb7007776b859b4b2645fc0f5920849046ea072e1a36bf769"
+  url "https://github.com/asimov-platform/asimov-cli/archive/refs/tags/25.8.0.tar.gz"
+  sha256 "f9a6f3ffb3829a9135208d579eb76320101b6840a3c3a3bbe50c9f9318eee515"
   license "Unlicense"
   head "https://github.com/asimov-platform/asimov-cli.git", branch: "master"
 
@@ -13,8 +13,8 @@ class AsimovCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/asimov-platform/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3be3492538e583943c2f80db650781111b723e39f7c43fe1d3cf80a8b4bfbb69"
-    sha256 cellar: :any,                 x86_64_linux:  "d3e2075ea465cb801b66f67a188378409d453801af50d5f9224c222361d4fd7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a6b78532f41bb45e463f1b404f5d8cd74d63645d6d4e400f93e0674e6b750f0"
+    sha256 cellar: :any,                 x86_64_linux:  "5098d0b2614070916ab0878eec857a2779afa360f288f18534875d880d6dcd03"
   end
 
   depends_on "rust" => :build
